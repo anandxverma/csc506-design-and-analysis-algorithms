@@ -2,6 +2,9 @@
 
 Benchmarks four classical sorting algorithms across multiple dataset types and sizes, then produces an analysis report comparing their performance.
 
+# Source Code
+The source code is available for download from Github at https://github.com/anandxverma/csc506-design-and-analysis-algorithms/tree/main/m3-ct3
+
 ## Algorithms
 
 | Algorithm | Time Complexity | Notes |
