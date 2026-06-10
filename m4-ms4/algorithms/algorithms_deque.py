@@ -5,6 +5,9 @@
 # Algorithm 2 – Sliding-Window Maximum  O(n) time / O(k) space
 # Algorithm 3 – BFS Shortest Path       O(V+E) time / O(V) space
 
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from deque import Deque
 
 

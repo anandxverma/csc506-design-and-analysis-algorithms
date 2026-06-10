@@ -7,7 +7,7 @@ Imports Node and LinkedList from linked_list.py in the same package.
 
 import sys
 import os
-sys.path.insert(0, os.path.dirname(__file__))
+sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from linked_list import Node, LinkedList
 
 
