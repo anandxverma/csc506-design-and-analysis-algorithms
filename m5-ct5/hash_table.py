@@ -3,15 +3,18 @@
 # to the same bucket index without overwriting each other.
 class HashTable:
     def __init__(self, size=10):
+        """Initialize the table with `size` empty buckets."""
         self.size = size
         # Initialize each bucket as an empty list to hold chained pairs
         self.buckets = [[] for _ in range(self.size)]
 
     def _hash(self, key):
+        """Return the bucket index for `key` by summing its character ASCII values mod table size."""
         # Sum ASCII values of the key's characters, then wrap to table size
         return sum(ord(c) for c in str(key)) % self.size
 
     def insert(self, key, value):
+        """Insert `key`/`value` into the table, or update the value if `key` already exists."""
         index = self._hash(key)
         bucket = self.buckets[index]
         # Update value in-place if key already exists (avoid duplicates)
@@ -22,6 +25,7 @@ class HashTable:
         bucket.append((key, value))
 
     def get(self, key):
+        """Return the value associated with `key`, or raise KeyError if not found."""
         index = self._hash(key)
         for k, v in self.buckets[index]:
             if k == key:
@@ -29,6 +33,7 @@ class HashTable:
         raise KeyError(f"Key '{key}' not found")
 
     def delete(self, key):
+        """Remove the entry for `key` from the table, or raise KeyError if not found."""
         index = self._hash(key)
         bucket = self.buckets[index]
         for i, (k, v) in enumerate(bucket):
@@ -38,13 +43,14 @@ class HashTable:
         raise KeyError(f"Key '{key}' not found")
 
     def display_buckets(self):
-        """Print each bucket index with its chain of (key, value) pairs."""
+        """Print each non-empty bucket index alongside its full chain of (key, value) pairs."""
         for i, bucket in enumerate(self.buckets):
             if bucket:
                 chain = " -> ".join(f"({k!r}: {v!r})" for k, v in bucket)
                 print(f"  [{i}]: {chain}")
 
     def __str__(self):
+        """Return a dict-like string of all key/value pairs across every bucket."""
         # Flatten all buckets into a single list of pairs for display
         pairs = []
         for bucket in self.buckets:
