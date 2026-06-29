@@ -1,0 +1,20 @@
+Implement a Graph class in Python using an adjacency matrix representation.
+
+Requirements:
+- Store vertices as a list of labels and edges as a 2D list (matrix of 0s and 1s)
+- Support both directed and undirected graphs via a constructor parameter
+- Implement these methods:
+    add_vertex(label)          — add a new vertex; expand the matrix
+    remove_vertex(label)       — remove vertex and all its edges
+    add_edge(src, dst, weight=1) — set matrix[src][dst] = weight
+    remove_edge(src, dst)      — set cell(s) back to 0
+    has_edge(src, dst)         — return True/False
+    get_neighbors(label)       — return list of adjacent vertex labels
+    display()                  — print the matrix with row/column headers
+
+Constraints:
+- Raise ValueError for unknown vertex labels
+- Keep vertex index mapping in a dict for O(1) label→index lookup
+
+Include a short __main__ block that builds a 5-vertex undirected graph,
+adds 6 edges, removes one vertex, and calls display().

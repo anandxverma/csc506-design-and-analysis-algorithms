@@ -1,0 +1,23 @@
+Implement Dijkstra's shortest path algorithm that works with both graph
+representations from the earlier prompts.
+
+Function signature:
+    dijkstra(graph, start_label) -> tuple[dict, dict]
+    # returns (distances, predecessors)
+
+Also implement:
+    shortest_path(graph, start_label, end_label) -> tuple[list[str], int]
+    # returns (path as ordered vertex list, total cost)
+
+Requirements:
+- Use a min-heap (heapq) for the priority queue
+- Print each relaxation step:
+      Relaxing edge A→C  old_dist=∞  new_dist=4
+- Return float('inf') distance and empty path when no route exists
+- Works with weighted and unweighted graphs (treat unweighted as weight=1)
+
+Include a __main__ block that:
+1. Builds a weighted directed graph with at least 7 vertices
+2. Finds shortest paths from one source to all other vertices
+3. Prints a distance table and reconstructed path for each destination
+4. Runs the same graph on both representations and asserts equal results

@@ -1,0 +1,24 @@
+Write a single test program (test_graphs.py) that demonstrates all graph
+functionality built in the previous prompts.
+
+The program must:
+1. Import both graph classes (MatrixGraph, ListGraph) and all algorithms
+2. Define a sample_graph() helper that constructs the same 8-vertex,
+   12-edge weighted undirected graph in both representations
+3. Run this test suite and print PASS/FAIL for each case:
+
+   Test 1  — add_vertex / has_edge round-trip on both representations
+   Test 2  — remove_vertex cleans up all incident edges
+   Test 3  — DFS visits all reachable vertices, correct order
+   Test 4  — BFS visits all reachable vertices, correct order
+   Test 5  — DFS and BFS produce same visited set (not same order)
+   Test 6  — Dijkstra finds the known shortest path A→H = cost 9
+   Test 7  — Dijkstra returns inf for unreachable vertex in directed graph
+   Test 8  — Both representations return identical Dijkstra results
+   Test 9  — display() produces output with correct vertex count
+   Test 10 — Performance: matrix and list both complete 1000-vertex BFS
+              in under 5 seconds
+
+4. Print a final summary line:  "X/10 tests passed"
+
+Use only the Python standard library (no third-party packages).

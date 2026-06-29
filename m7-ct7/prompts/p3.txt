@@ -1,0 +1,23 @@
+Write DFS and BFS traversal functions that work with BOTH graph classes
+from the previous prompts (matrix and list versions).
+
+Each function signature:
+    dfs(graph, start_label) -> list[str]
+    bfs(graph, start_label) -> list[str]
+
+Requirements:
+- Both functions accept any graph object that exposes get_neighbors(label)
+- Print each vertex as it is visited with a step number, e.g.:
+      Step 1: Visit A
+      Step 2: Visit B
+- Return the ordered list of visited vertex labels
+- Handle disconnected graphs by noting unvisited vertices at the end
+- DFS must use an explicit stack (not recursion) so the call stack
+  does not limit depth
+
+Include a __main__ block that:
+1. Builds a directed graph with 6 vertices and 8 edges using both
+   graph representations
+2. Runs DFS and BFS from the same start vertex on each representation
+3. Asserts that both representations produce identical traversal orders
+4. Prints a side-by-side comparison table

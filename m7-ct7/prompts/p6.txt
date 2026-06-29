@@ -1,0 +1,23 @@
+Write a Python script (benchmark.py) that measures and compares the
+performance of MatrixGraph vs ListGraph across four operations:
+
+Operations to benchmark:
+  1. Build graph         (add N vertices + N*log(N) random edges)
+  2. BFS traversal       (from vertex 0 to all reachable vertices)
+  3. Dijkstra traversal  (single-source shortest paths)
+  4. Edge lookup         (1000 random has_edge calls)
+
+Test at these graph sizes:  N = 50, 100, 500, 1000, 2000
+
+Output a Markdown table for each operation showing time in milliseconds,
+then after the table print a two-page (≈600 word) analysis covering:
+
+  - Time complexity of each operation for both representations
+    (Big-O for sparse vs dense graphs)
+  - Space complexity: when does the matrix become wasteful?
+  - The density threshold (edge_count / max_possible_edges) where
+    the matrix starts to outperform the list
+  - Practical guidance: which to choose for social networks, road maps,
+    dense neural graphs, and dynamic graphs with frequent vertex changes
+
+Use the timeit module for measurements and print results to stdout.

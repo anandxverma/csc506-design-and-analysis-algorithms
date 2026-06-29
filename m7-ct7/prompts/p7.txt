@@ -1,0 +1,32 @@
+Extend the DFS and BFS functions to produce a visual step-by-step
+representation of how the algorithm traverses a graph.
+
+For each step, print:
+  - The current frontier (stack for DFS, queue for BFS)
+  - The vertex being visited
+  - An ASCII "tree" showing edges discovered so far
+
+Example output format for BFS:
+  Step 1 | Queue: [A]          | Visit: A  | Discovered: A
+  Step 2 | Queue: [B, C]       | Visit: B  | Edge: A→B
+  Step 3 | Queue: [C, D]       | Visit: C  | Edge: A→C
+  ...
+
+  Traversal tree (BFS):
+       A
+      / \
+     B   C
+    /     \
+   D       E
+
+For DFS show the recursion depth with indentation:
+  [depth 0] Visit A
+    [depth 1] Visit B
+      [depth 2] Visit D
+      [depth 2] Backtrack to B
+    [depth 1] Backtrack to A
+    [depth 1] Visit C
+
+Implement visual_dfs(graph, start) and visual_bfs(graph, start).
+Include a __main__ block using a small 6-vertex graph where the
+tree structure is clearly visible in the ASCII output.

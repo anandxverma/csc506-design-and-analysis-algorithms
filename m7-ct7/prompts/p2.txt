@@ -1,0 +1,21 @@
+Implement a Graph class in Python using an adjacency list representation.
+
+Requirements:
+- Store the graph as a dict mapping each vertex label to a list of
+  (neighbor_label, weight) tuples
+- Support both directed and undirected graphs via a constructor parameter
+- Implement these methods:
+    add_vertex(label)
+    remove_vertex(label)       — also remove all edges pointing to it
+    add_edge(src, dst, weight=1)
+    remove_edge(src, dst)
+    has_edge(src, dst)
+    get_neighbors(label)       — return list of (neighbor, weight) tuples
+    display()                  — print each vertex and its adjacency list
+
+Constraints:
+- Raise ValueError for unknown vertex labels
+- For undirected graphs, maintain both directions automatically
+
+Include a __main__ block that builds the same 5-vertex graph as in the
+adjacency matrix version so results can be compared side-by-side.
